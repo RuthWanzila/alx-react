@@ -1,11 +1,5 @@
-const Immutable = require('immutable');
+import { List, Map } from 'immutable';
 
-export function concatElements(page1, page2) {
-  return Immutable.List(page1).concat(Immutable.List(page2));
-}
+export const concatElements = (page1, page2) => List(page1).concat(List(page2));
 
-export function mergeElements(page1, page2) {
-  return Immutable.Map(page1)
-    .merge(Immutable.Map(page2))
-    .toList();
-}
+export const mergeElements = (page1, page2) => Map(page1).concat(Map(page2));
